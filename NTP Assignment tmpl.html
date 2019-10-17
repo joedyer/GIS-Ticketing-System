@@ -74,21 +74,19 @@
                                           <div dir="auto" style="display:block;margin:.1em 0 .25em 0;color:#666"></div>
                                        </label>
                                        <ul role="radiogroup" aria-label="[NTP] is assigned to :  " style="list-style:none;padding:0;margin:.5em 0 0">
+                                              <!--START-->
+                                       <? var sheet = SpreadsheetApp.getActive().getSheetByName('Teams');
+                                          var data = sheet.getRange(2, 5, sheet.getLastRow(), 2).getValues();
+                                          data = cutBlanks(data);
+                                          for (var i = 0; i < data.length; i++){
+                                       ?>
                                           <li style="margin:0;line-height:1.3em;padding-bottom:.5em">
-                                             <label><span style="display:inline-block"><input type="radio" name="entry.2128540525" value="Joseph Dyer joseph.dyer@engineeringassociates.com" id="m_2061944480485783968group_2128540525_1" role="radio" aria-label="Joseph Dyer joseph.dyer@engineeringassociates.com"></span>
-                                             <span>Joseph Dyer <a href="mailto:joseph.dyer@engineeringassociates.com" target="_blank">joseph.dyer@<wbr>engineeringassociates.com</a></span>
+                                             <label><span style="display:inline-block"><input type="radio" name="entry.2128540525" value="<?!= data[i][0]+" "+data[i][1]?>" id="m_2061944480485783968group_2128540525_1" role="radio" aria-label="Joseph Dyer joseph.dyer@engineeringassociates.com" checked></span>
+                                             <span><?= data[i][0]+" "+data[i][1]?></span>
                                              </label>
                                           </li>
-                                          <li style="margin:0;line-height:1.3em;padding-bottom:.5em">
-                                             <label><span style="display:inline-block"><input type="radio" name="entry.2128540525" value="Dummy Dummy TESTTEST" id="m_2061944480485783968group_2128540525_2" role="radio" aria-label="Dummy Dummy TESTTEST"></span>
-                                             <span>Dummy Dummy TESTTEST</span>
-                                             </label>
-                                          </li>
-                                          <li style="margin:0;line-height:1.3em;padding-bottom:.5em">
-                                             <label><span style="display:inline-block"><input type="radio" name="entry.2128540525" value="Dummy2 Dummy2 TESTESTEst" id="m_2061944480485783968group_2128540525_3" role="radio" aria-label="Dummy2 Dummy2 TESTESTEst"></span>
-                                             <span>Dummy2 Dummy2 TESTESTEst</span>
-                                             </label>
-                                          </li>
+                                       <?}?>
+                                        <!--END-->
                                        </ul>
                                     </div>
                                  </div>
