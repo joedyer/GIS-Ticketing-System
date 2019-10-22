@@ -18,8 +18,10 @@ function edit(e){
   
   if(name == 'Teams'){
     refreshTeamOptions();
-  }else if (name == 'NED NTP Receipt'){
+  }else if (name == 'NED NTP Receipt' && e.range.getLastColumn() < 16){
     markSubmitted('#ffcccb', 'Not yet submitted');
+  }else if (name == 'NED NTP Receipt' && e.range.getLastColumn() >= 16){
+    updateCharts();
   }
 }
 
