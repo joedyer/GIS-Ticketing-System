@@ -1,0 +1,25 @@
+<head>
+   <style>
+      .button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      width: 100%;
+      }
+   </style>
+</head>
+<body>
+   <div style="text-align:center;display:block;font-weight:bold;margin-top:.83em;margin-bottom:.83em;background-color:#ededed;">NED NTP Functions</div>
+   <input type="button" class = "button" value="Submit Forms" onclick="google.script.run.submitFromReceipt()" />
+   <input type="button" class = "button" value="Mark Selected as Submitted" onclick="google.script.run.markSubmitted('#d9ead3','Submitted')" />
+   <input type="button" class = "button" value="Mark Selected as Unsubmitted" onclick="google.script.run.markSubmitted('#ffcccb','Not yet submitted')" />
+   <div style="text-align:center;display:block;font-weight:bold;margin-top:2em;margin-bottom:.83em;background-color:#ededed;">Chart Functions</div>
+   <input type="button" class = "button" value="Update Charts" onclick="google.script.run.updateCharts()" />
+</body>
