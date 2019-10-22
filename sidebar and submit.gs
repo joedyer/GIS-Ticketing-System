@@ -1,10 +1,6 @@
-function open(e) {
-  var html = HtmlService.createHtmlOutputFromFile('sidebar')
-      .setTitle('Submit Forms')
-      .setWidth(300);
-  var ui = SpreadsheetApp.getUi(); // Or DocumentApp or SlidesApp or FormApp.
-  ui.showSidebar(html);
-  ui.createMenu('Custom Menu')
+function addMenu() {
+  SpreadsheetApp.getUi() // Or DocumentApp or SlidesApp or FormApp.
+        .createMenu('Custom Menu')
         .addItem('Submit Forms', 'submitFromReceipt')
         .addItem('Open Sidebar', 'openSideBar')
         .addToUi();

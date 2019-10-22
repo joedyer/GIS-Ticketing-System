@@ -23,18 +23,18 @@ function edit(e){
   }
 }
 
-
-function test(){
+function open(){
   
-  var ntp = "dsafdsa";
+  addMenu();
+  openSideBar();
   
-  var tmpl = HtmlService.createTemplateFromFile('Copy of GIS Assignment.html');
-  tmpl.ntp = ntp;
-  var body = tmpl.evaluate().getContent();
+  //makesure hidden sheets are hidden
+  var sheets = SpreadsheetApp.getActive().getSheets();
   
-  MailApp.sendEmail({
-    to: 'joseph.dyer@engineeringassociates.com',
-    subject: 'TESTING TEMPLATING',
-    htmlBody: body,
-  });
+  for(var i = 0; i < sheets.length; i++){
+    var sheetname = sheets[i].getName();
+    if(sheetname != 'NED NTP Receipt' && sheetname != 'Charts' && sheetname != 'Data/Instructions' && sheetname != 'NED NTP' && sheetname != 'Teams'){
+      sheets[i].hideSheet();
+    }
+  }
 }
